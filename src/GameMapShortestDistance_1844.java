@@ -1,7 +1,7 @@
 import java.util.*;
 
+//게임맵최단거리 : 깊이/너비 우선 탐색(DFS/BFS)
 public class GameMapShortestDistance_1844 {
-
     public static void main(String[] args) {
         //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
         BestAlbum_42579 c = new BestAlbum_42579();
