@@ -1,9 +1,7 @@
 package programmers;
 
-import java.util.*;
-
-//피로도 DFS 깊이우선탐색
-public class Tiredness_87946 {
+//피로도(87946) : DFS 깊이우선탐색
+public class DFS_Tiredness {
     public static void main(String[] args) {
         //input 80
         //input [[80,20],[50,40],[30,10]]
@@ -12,7 +10,7 @@ public class Tiredness_87946 {
         int k = 80;
         int[][] dungeons = {{80,20},{50, 40},{30, 10}}; //["최소 필요 피로도", "소모 피로도"]
 
-        Tiredness_87946 T = new Tiredness_87946();
+        DFS_Tiredness T = new DFS_Tiredness();
         System.out.println(T.solution(k,dungeons));
     }
 

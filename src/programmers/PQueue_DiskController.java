@@ -2,11 +2,11 @@ package programmers;
 
 import java.util.*;
 
-//디스크컨트롤러(힙Heap)
-public class DiskController_42627 {
+//디스크컨트롤러(42627) : 힙Heap PriorityQueue
+public class PQueue_DiskController {
 
     public static void main(String[] args) {
-        DiskController_42627 diskController= new DiskController_42627();
+        PQueue_DiskController diskController= new PQueue_DiskController();
         int[][] jobs = {{0, 3}, {1, 9},{2, 6}};
         System.out.println(diskController.solution(jobs));
     }

@@ -1,12 +1,12 @@
 package programmers;
 
-//입국심사 : 이분탐색
-public class Immigration_43238 {
+//입국심사(43238) : 이분탐색 Binary search
+public class BS_Immigration {
     public static void main(String[] args) {
         int n = 6;
         int[] times = {7,10};
 
-        Immigration_43238 immigration= new Immigration_43238();
+        BS_Immigration immigration= new BS_Immigration();
         System.out.println(immigration.solution(n, times));
     }
 

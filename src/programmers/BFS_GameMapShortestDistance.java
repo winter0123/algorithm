@@ -2,15 +2,15 @@ package programmers;
 
 import java.util.*;
 
-//게임맵최단거리 : 깊이/너비 우선 탐색(DFS/BFS)
-public class GameMapShortestDistance_1844 {
+//게임맵최단거리(1844) : BFS 너비 우선 탐색
+public class BFS_GameMapShortestDistance {
     public static void main(String[] args) {
         //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
-        BestAlbum_42579 c = new BestAlbum_42579();
+        BestAlbum c = new BestAlbum();
         int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
         //=> 11
 
-        GameMapShortestDistance_1844 T = new GameMapShortestDistance_1844();
+        BFS_GameMapShortestDistance T = new BFS_GameMapShortestDistance();
         System.out.println(T.solution(maps));
     }
 
