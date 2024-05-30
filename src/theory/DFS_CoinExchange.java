@@ -9,16 +9,16 @@ import java.util.StringTokenizer;
 public class DFS_CoinExchange {
     //동전의 개수와 종류, 거슬러줄 금액이 주어진다. 거슬러줄 동전의 최소 갯수를 구하시오
 
-    static int m, answer = Integer.MAX_VALUE;
+    static int n, m, answer = Integer.MAX_VALUE;
 
     public void DFS(int L, int sum, int[] arr){
         if(m<sum)
             return;
 
         if(m==sum){
-            answer = L;
+            answer = Math.min(answer,L);
         }else{
-            for(int i=0; i<arr.length; i++){
+            for(int i=0; i<n; i++){
                 DFS(L+1,sum+arr[i], arr);
             }
         }
@@ -37,7 +37,7 @@ public class DFS_CoinExchange {
         StringTokenizer st2 = new StringTokenizer(br.readLine());
         StringTokenizer st3 = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st1.nextToken());
+        n = Integer.parseInt(st1.nextToken());
         int[] arr = new int[n];
         for(int i=0; i<n; i++){
             arr[i] = Integer.parseInt(st2.nextToken());
