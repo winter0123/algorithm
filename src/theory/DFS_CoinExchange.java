@@ -3,6 +3,9 @@ package theory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 //DFS,BFS 동전교환
@@ -11,12 +14,12 @@ public class DFS_CoinExchange {
 
     static int n, m, answer = Integer.MAX_VALUE;
 
-    public void DFS(int L, int sum, int[] arr){
-        if(m<sum)
-            return;
+    public void DFS(int L, int sum, Integer[] arr){
+        if(m<sum) return;     //거스름합계를 넘는 경우 stop
+        if(L>=answer) return; //이미 찾은 최소 개수보다 작은경우 stop
 
         if(m==sum){
-            answer = Math.min(answer,L);
+            answer = Math.min(answer,L); //합계 최소값 출력
         }else{
             for(int i=0; i<n; i++){
                 DFS(L+1,sum+arr[i], arr);
@@ -38,10 +41,13 @@ public class DFS_CoinExchange {
         StringTokenizer st3 = new StringTokenizer(br.readLine());
 
         n = Integer.parseInt(st1.nextToken());
-        int[] arr = new int[n];
+
+        Integer[] arr = new Integer[n];
         for(int i=0; i<n; i++){
             arr[i] = Integer.parseInt(st2.nextToken());
         }
+        Arrays.sort(arr, Collections.reverseOrder()); //정렬 안하면 timeout남
+
         m = Integer.parseInt(st3.nextToken());
 
         DFS_CoinExchange T = new DFS_CoinExchange();
