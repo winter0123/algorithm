@@ -57,7 +57,7 @@ public class Mineral {
         for (int i = 0; i < addNum.length; i++) {
             for (int j = 0; j < addNum_copy.length; j++) {
                 if (addNum[i] == sortedArrReverse[j] && !hashMap.containsKey(j + 1)) {
-                    hashMap.put(j + 1, i);
+                    hashMap.put(j + 1, i); //이미 저장한 순서가 있는경우 건너뛰기
                     sortOrder[i] = j + 1; // 1부터 시작하는 순서를 저장합니다.
                     break;
                 }
