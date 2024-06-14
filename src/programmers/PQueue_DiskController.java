@@ -7,7 +7,7 @@ public class PQueue_DiskController {
 
     public static void main(String[] args) {
         PQueue_DiskController diskController= new PQueue_DiskController();
-        int[][] jobs = {{0, 3}, {1, 9},{2, 6}};
+        int[][] jobs = {{0, 3}, {1, 9},{2, 6}}; //9
         System.out.println(diskController.solution(jobs));
     }
 
