@@ -7,8 +7,7 @@ public class BFS_GameMapShortestDistance {
     public static void main(String[] args) {
         //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
         HashMap_BestAlbum c = new HashMap_BestAlbum();
-        int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}};
-        //=> 11
+        int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}}; //=> 11
 
         BFS_GameMapShortestDistance T = new BFS_GameMapShortestDistance();
         System.out.println(T.solution(maps));
