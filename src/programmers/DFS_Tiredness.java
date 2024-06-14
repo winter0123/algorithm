@@ -3,10 +3,6 @@ package programmers;
 //피로도(87946) : DFS 깊이우선탐색
 public class DFS_Tiredness {
     public static void main(String[] args) {
-        //input 80
-        //input [[80,20],[50,40],[30,10]]
-        //result 3
-
         int k = 80;
         int[][] dungeons = {{80,20},{50, 40},{30, 10}}; //["최소 필요 피로도", "소모 피로도"]
 
