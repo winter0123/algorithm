@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 //광물캐기(172927) : Greedy 탐욕법
 public class Greedy_Mineral {
-
     public static void main(String[] args) {
         int[] picks = {1, 3, 2};
         String[] minerals = {"diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"}; //출력 12
