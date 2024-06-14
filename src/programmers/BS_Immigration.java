@@ -10,7 +10,6 @@ public class BS_Immigration {
         System.out.println(immigration.solution(n, times));
     }
 
-
     public long solution(int n, int[] times) {
         long answer = 0;
 
