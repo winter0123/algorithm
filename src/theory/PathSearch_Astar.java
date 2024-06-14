@@ -113,12 +113,16 @@ class Astar {
                 //이미 탐색한 노드이면 continue;
                 boolean pass = false;
                 for(AstarNode node : closeList){
-                    if(node.x == childNode.x && node.y == childNode.y)
+                    if(node.x == childNode.x && node.y == childNode.y){
                         pass = true;
+                        break;
+                    }
                 }
                 for(AstarNode node : openList){
-                    if(node.x == childNode.x && node.y == childNode.y)
+                    if(node.x == childNode.x && node.y == childNode.y){
                         pass = true;
+                        break;
+                    }
                 }
                 if(pass) continue;
 
