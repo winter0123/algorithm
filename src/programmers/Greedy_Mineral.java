@@ -5,13 +5,13 @@ import java.util.Comparator;
 import java.util.HashMap;
 
 //광물캐기(172927) : Greedy 탐욕법
-public class Mineral {
+public class Greedy_Mineral {
 
     public static void main(String[] args) {
         int[] picks = {1, 3, 2};
         String[] minerals = {"diamond", "diamond", "diamond", "iron", "iron", "diamond", "iron", "stone"}; //출력 12
 
-        Mineral mineral = new Mineral();
+        Greedy_Mineral mineral = new Greedy_Mineral();
         System.out.println(mineral.solution(picks, minerals)); // 중간 결과값 출력
     }
 

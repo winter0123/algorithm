@@ -3,10 +3,10 @@ package programmers;
 import java.util.*;
 
 //베스트엘범(42579) : HashMap
-public class BestAlbum {
+public class HashMap_BestAlbum {
     public static void main(String[] args) {
         //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
-        BestAlbum c = new BestAlbum();
+        HashMap_BestAlbum c = new HashMap_BestAlbum();
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
         int[] plays ={500, 600, 150, 800, 2500};
         //=> [4, 1, 3, 0]
