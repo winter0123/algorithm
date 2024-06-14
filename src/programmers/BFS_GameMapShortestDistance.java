@@ -5,7 +5,6 @@ import java.util.*;
 //게임맵최단거리(1844) : BFS 너비 우선 탐색
 public class BFS_GameMapShortestDistance {
     public static void main(String[] args) {
-        //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
         HashMap_BestAlbum c = new HashMap_BestAlbum();
         int[][] maps = {{1,0,1,1,1},{1,0,1,0,1},{1,0,1,1,1},{1,1,1,0,1},{0,0,0,0,1}}; //=> 11
 

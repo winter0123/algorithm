@@ -8,8 +8,7 @@ public class HashMap_BestAlbum {
         //속한 노래가 많이 재생된 장르를 먼저 수록합니다.
         HashMap_BestAlbum c = new HashMap_BestAlbum();
         String[] genres = {"classic", "pop", "classic", "classic", "pop"};
-        int[] plays ={500, 600, 150, 800, 2500};
-        //=> [4, 1, 3, 0]
+        int[] plays ={500, 600, 150, 800, 2500}; //=> [4, 1, 3, 0]
         System.out.println(Arrays.toString(c.solution(genres, plays)));
     }
 
