@@ -30,7 +30,7 @@ public class TravelRoute {
                 end = tickets[i][1];
             }
         }
-        return DFS(0, tickets, visited, end);
+        return DFS(1, tickets, visited, end);
     }
 
     public boolean DFS (int idx, String[][] tickets, Boolean[] visited, String end){
@@ -39,25 +39,16 @@ public class TravelRoute {
             return false;
 
         int i= 0;
-        while(i < tickets.length){
-            if(visited[i] == true){
-                i++;
-                continue;
-            }
-            String start = tickets[i][0];
-
-            if(i != tickets.length-1){
-                if(start.equals(end)){
-                    result[idx+1] = start;
-                    visited[i] = true;
-                    boolean check = DFS(idx+1,tickets, visited,tickets[i][1]);
-                    if(!check){
-                        visited[i] = false;
-                        DFS(idx+1,tickets, visited,tickets[i][1]);
-                    }
-                }
-            }
+        while(i < tickets.length-1 && idx < tickets.length-1){
             i++;
+            if(visited[i] == true) continue;
+
+            if(end.equals(tickets[i][0])){
+                visited[i] = true;
+                result[idx] = tickets[i][0];
+                DFS(idx+1, tickets, visited, end);
+            }
+
         }
 
         return false;
