@@ -7,50 +7,66 @@ public class TravelRoute {
     public static String[] result;
     public static void main(String[] args) {
         TravelRoute T = new TravelRoute();
-        String[][] tickets =  {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
+       // String[][] tickets =  {{"ICN", "SFO"}, {"ICN", "ATL"}, {"SFO", "ATL"}, {"ATL", "ICN"}, {"ATL","SFO"}};
+        String[][] tickets =  {{"ICN", "A"},{"A", "B"}, {"A", "C"}, {"C", "A"}, {"B", "D"}};
+        //["ICN","A","C","A","B","D"]
         T.solution(tickets);
         for(int i = 0; i < tickets.length; i++){
             System.out.println(result[i]);
         }
     }
 
-    public boolean solution(String[][] tickets) {
-        String[] answer = {};
-        result = new String[tickets.length];
-        Boolean[] visited = new Boolean[tickets.length];
-        Arrays.sort(tickets[1]);
+    public String[] solution(String[][] tickets) {
+        result = new String[tickets.length+1];
+        boolean[] visited = new boolean[tickets.length];
 
-        String end = "";
+        tickets = Arrays.stream(tickets)
+                .sorted((t1, t2) -> t1[1].compareTo(t2[1]))
+                .toArray(String[][]::new);
+
+        String endPoint = "";
+
         for(int i = 0; i < tickets.length; i++){
-            visited[i] = false;
-
-            if(tickets[i][0].equals("ICN") && result[0] == null){
+            if(tickets[i][0].equals("ICN")){
                 result[0] = tickets[i][0];
+                endPoint = tickets[i][1];
                 visited[i] = true;
-                end = tickets[i][1];
+                if(DFS(1, tickets, visited, endPoint))
+                {
+                    return result;
+                } else {
+                    visited = new boolean[tickets.length];
+                    result = new String[tickets.length+1];
+                }
             }
         }
-        return DFS(1, tickets, visited, end);
+        return result;
     }
 
-    public boolean DFS (int idx, String[][] tickets, Boolean[] visited, String end){
+    public boolean DFS (int index, String[][] tickets, boolean[] visited, String endPoint){
 
-        if(idx == tickets.length)
-            return false;
+        for(int i = 0; i < tickets.length; i++){
+            if(visited[i])
+                continue;
 
-        int i= 0;
-        while(i < tickets.length-1 && idx < tickets.length-1){
-            i++;
-            if(visited[i] == true) continue;
-
-            if(end.equals(tickets[i][0])){
+            if(endPoint.equals(tickets[i][0])){
+                result[index] = tickets[i][0];
+                endPoint = tickets[i][1];
                 visited[i] = true;
-                result[idx] = tickets[i][0];
-                DFS(idx+1, tickets, visited, end);
+                index++;
+
+                if (index >= tickets.length){
+                    result[index] = tickets[i][1];
+                    return true;
+                }
+
+                if(DFS(index, tickets, visited, endPoint)){
+                    return true;
+                }
+                visited[i] = false;
+                result[index] = null;
             }
-
         }
-
         return false;
     }
 }
