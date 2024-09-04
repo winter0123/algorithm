@@ -2,6 +2,7 @@ package programmers;
 
 import java.util.Stack;
 
+//주식가격(42584): Stack
 public class Stack_StockPrice {
     public static void main(String[] args) {
         Stack_StockPrice stack_StockPrice= new Stack_StockPrice();
