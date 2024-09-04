@@ -9,7 +9,7 @@ public class PathSearch_Astar {
         //0(갈수있는 길), 벽(1~8)
         Integer[][] map = {
                 {0, 0, 1, 0, 0, 0, 3, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0, 3, 0, 0, 0},
+                {0, 1, 1, 0, 0, 0, 3, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 3, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 3, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 3, 0, 2, 0},
@@ -40,7 +40,9 @@ class Astar {
     List<AstarNode> closeList;
 
     public void findPath() {
-        int[][] position = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}}; //탐색을 위한 position
+        //탐색을 위한 position
+        //int[][] position = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}}; //직선으로만 진행
+        int[][] position = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}, {-1, -1}, {1, 1}, {-1, 1}, {1, -1}}; //대각선으로 진행
 
         rowSize = map.length;
         colSize = map[0].length;
