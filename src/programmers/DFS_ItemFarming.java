@@ -85,7 +85,7 @@ public class DFS_ItemFarming {
 
         visitCheck[characterY][characterX] = 1;
 
-        for(int[] newPosition : position) { //현재 지점을 기준으로 8곳 탐색
+        for(int[] newPosition : position) { //현재 지점을 기준으로 4곳 탐색
             int nx = characterX + newPosition[0];
             int ny = characterY + newPosition[1];
             if(grid[ny][nx] == 2){
@@ -123,7 +123,7 @@ public class DFS_ItemFarming {
     }
 
     Point DFS(int nowPointX, int nowPointY){
-        for(int[] newPosition : position) { //현재 지점을 기준으로 8곳 탐색
+        for(int[] newPosition : position) { //현재 지점을 기준으로 4곳 탐색
             int nx = nowPointX + newPosition[0];
             int ny = nowPointY + newPosition[1];
 
